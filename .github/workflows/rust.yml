@@ -30,7 +30,7 @@ jobs:
             #   with:
             #       command: check
             - name: add additional components
-                run: rustup component add llvm-tools-preview
+              run: rustup component add llvm-tools-preview
 
             - uses: actions/checkout@v2
             - name: Build
