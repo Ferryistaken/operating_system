@@ -35,9 +35,9 @@ jobs:
             - name: add additional components
               run: rustup component add llvm-tools-preview rust-src
 
-            - uses: actions/checkout@v2
-            - name: Run tests
-              run: cargo test
+            # - uses: actions/checkout@v2
+            # - name: Run tests
+            #   run: cargo test
 
             - uses: actions/checkout@v2
             - name: Build
