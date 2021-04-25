@@ -7,22 +7,32 @@
 			"label": "cargo run",
 			"type": "shell",
 			"command": "~/.cargo/bin/cargo",
-			"args": ["run"],
+			"args": [
+				"run"
+			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
-			}
+			},
+			"problemMatcher": [
+				"$rustc"
+			]
 		},
 		{
 			"label": "cargo run release",
 			"type": "shell",
 			"command": "~/.cargo/bin/cargo",
-			"args": ["run", "--release"],
+			"args": [
+				"run",
+				"--release"
+			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
-			"problemMatcher": ["$rustc"]
+			"problemMatcher": [
+				"$rustc"
+			]
 		}
 	]
 }
