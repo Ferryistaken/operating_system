@@ -1,0 +1,7 @@
+(A) create interface for VGA text mode tag:driver
+(B) create driver to render squares tag:driver
+(C) write simple "game" tag:feature
+x (A) make a bootable OS tag:essential
+x (B) create github action file tag:bestpractice
+x (C) add readme tag:bestpractice
+(A) write unit tests to check that it actually works tag:bestpractice
