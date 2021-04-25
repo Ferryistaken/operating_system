@@ -13,8 +13,29 @@ This was created to learn about bare metal programming, the x86_64 architecture,
 
 # How to run it
 
-Make sure that you have `qemu-system-x86_64` installed, and type
+## Requirements
+
+Here are the required packages:
+
+Rust:
+
+-   rust nightly compiler >= `v1.53.0` (run `rustup toolchain install nightly`)
+-   `rustup run nightly rustup component add llvm-tools-preview rust-src`
+-   `cargo install bootimage`
+
+Operating System:
+
+-   `qemu-system-x86_64`
+-   `cargo`
+-   `rustup`
 
 ```shell
-cargo run
+rustup run nightly cargo build --release
+```
+
+Now you will have the image under `target/x86_64-test_os/debug/bootimage-test_os.bin`.  
+To run in in `qemu` use this command:
+
+```shell
+qemu-system-x86_64 -drive format=raw,file=target/x86_64-test_os/debug/bootimage-test_os.bin
 ```
