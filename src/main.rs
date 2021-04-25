@@ -30,7 +30,10 @@ fn panic(info: &PanicInfo) -> ! {
 
 #[no_mangle]
 pub extern  "C" fn _start() -> ! {
-    println!("Hello world using macros");
+    for i in 0..100  {
+        println!("Hello world using macros. Counter: {}", i);
+        
+    };
 
     #[cfg(test)]
     test_main();
