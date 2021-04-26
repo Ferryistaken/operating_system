@@ -9,6 +9,14 @@
 
 mod serial;
 
+// This defines if something is testable, so that I don't need
+// to print for every test
+pub trait Testable {
+    fn run(&self) -> ();
+}
+
+impl<T>
+
 
 #[cfg(test)]
 fn test_runner(tests: &[&dyn Fn()]) {
