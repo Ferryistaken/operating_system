@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Install linker
-              run: sudo apt update && sudo apt install build-essential qemu-system-x86
+              run: sudo apt update && sudo apt -y install build-essential qemu-system-x86
     build:
         needs: [install_linker]
         name: Compile and test the executable
