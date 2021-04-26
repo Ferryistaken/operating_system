@@ -20,6 +20,7 @@ impl<T> Testable for T
 where
     T: Fn(),
 {
+    // Print function name and if it passes it prints "[ok]"
     fn run(&self) {
         serial_print!("{}...\t", core::any::type_name::<T>());
         self();
