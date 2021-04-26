@@ -25,16 +25,16 @@
 			},
 			"problemMatcher": ["$rustc"]
 		},
-		// {
-		// 	"label": "cargo test",
-		// 	"type": "shell",
-		// 	"command": "~/.cargo/bin/cargo",
-		// 	"args": ["test"],
-		// 	"group": {
-		// 		"kind": "build",
-		// 		"isDefault": true
-		// 	},
-		// 	"problemMatcher": ["$rustc"]
-		// }
+		{
+			"label": "cargo test",
+			"type": "shell",
+			"command": "~/.cargo/bin/cargo",
+			"args": ["test"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": ["$rustc"]
+		}
 	]
 }

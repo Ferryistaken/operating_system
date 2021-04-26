@@ -7,9 +7,12 @@
 // `main`. We can't use `main` because we specified `no_main`
 #![reexport_test_harness_main = "test_main"]
 
+mod serial;
+
+
 #[cfg(test)]
 fn test_runner(tests: &[&dyn Fn()]) {
-    println!("Running {} tests", tests.len());
+    serial_println!("Running {} tests", tests.len());
     for test in tests {
         test();
     }
@@ -32,7 +35,6 @@ fn panic(info: &PanicInfo) -> ! {
 pub extern  "C" fn _start() -> ! {
     for i in 0..100  {
         println!("Hello world using macros. Counter: {}", i);
-        
     };
 
     #[cfg(test)]
@@ -45,9 +47,9 @@ pub extern  "C" fn _start() -> ! {
 // tests
 #[test_case]
 fn trivial_assertion() {
-    print!("Trivial assertion... ");
+    serial_print!("Trivial assertion... ");
     assert_eq!(1, 1);
-    println!("[ok]");
+    serial_println!("[ok]");
 }
 
 // This is to make sure that qemu exits once the tests finish
