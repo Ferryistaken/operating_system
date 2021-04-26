@@ -33,12 +33,12 @@ jobs:
             # as it is set as an "override" for current directory
 
             - name: add additional components
-              run: rustup run nightly rustup component add llvm-tools-preview rust-src
+              run: rustup component add llvm-tools-preview rust-src
 
-            - uses: actions/checkout@v2
-            - name: Run tests
-              run: rustup run nightly cargo test
+            # - uses: actions/checkout@v2
+            # - name: Run tests
+            #   run: cargo test
 
             - uses: actions/checkout@v2
             - name: Build
-              run: rustup run nightly cargo build
+              run: cargo build

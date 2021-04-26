@@ -11,6 +11,13 @@ edition = "2018"
 # [profile.release]
 # panic = "abort"
 
+# I am running this tests as no harness tests because when one fails
+# the next ones can't run, because they should panic, so there is
+# no point in having a test_runner
+[[test]]
+name = "should_panic"
+harness = false
+
 # This is to exit qemu automatically
 [package.metadata.bootimage]
 test-args = [

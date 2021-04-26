@@ -7,6 +7,7 @@ use volatile::Volatile;
 use lazy_static::lazy_static;
 use spin::Mutex;
 
+
 // Enum of colors represented as u8
 #[allow(dead_code)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -166,4 +167,31 @@ macro_rules! println {
 pub fn _print(args: fmt::Arguments) {
     use core::fmt::Write;
     WRITER.lock().write_fmt(args).unwrap();
+}
+
+// Tests
+#[test_case]
+fn test_println_simple() {
+    println!("test_println_simple output");
+}
+
+#[test_case]
+fn test_println_many() {
+    for _ in 0..200 {
+        println!("test_println_many output");
+    }
+}
+
+// Test that each char that we print actually appears,
+// BUFFER_HEIGHT - 2 since println prints to the last line,
+// but the appends a \n, which makes it go to the line above.
+// I just compare what I wrote to what the char is and see if it's valid
+#[test_case]
+fn test_println_output() {
+    let s = "Test String That Fits in 1 Line";
+    println!("{}", s);
+    for (i, c) in s.chars().enumerate() {
+        let screen_char = WRITER.lock().buffer.chars[BUFFER_HEIGHT - 2][i].read();
+        assert_eq!(char::from(screen_char.ascii_character), c);
+    }
 }
