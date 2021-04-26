@@ -40,5 +40,5 @@ jobs:
             #   run: cargo test
 
             - uses: actions/checkout@v2
-            - name: Build
-              run: cargo build
+            - name: check
+              run: cargo check
