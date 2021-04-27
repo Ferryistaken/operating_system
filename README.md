@@ -10,7 +10,7 @@
 # Bare metal program written entirely in rust
 
 This was created to learn about bare metal programming, the x86_64 architecture, and rust in general.
-Heavily inspired by ![this](https://os.phil-opp.com/)
+Heavily inspired by [this](https://os.phil-opp.com/)
 
 # How to run it
 
